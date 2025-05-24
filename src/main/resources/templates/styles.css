@@ -1,0 +1,50 @@
+.root {
+    -fx-font-family: 'Roboto';
+    -fx-background-color: #000000; /* Black background */
+}
+
+.button {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 1);
+    -fx-background-radius: 4px;
+}
+
+.button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255,215,0,0.4), 8, 0, 0, 2);
+}
+
+/* Main container styles */
+.main-container {
+    -fx-background-color: #000000; /* Black */
+    -fx-min-width: 800px;
+    -fx-min-height: 600px;
+    -fx-pref-width: 1000px;
+    -fx-pref-height: 800px;
+}
+
+/* Ensure content fills available space */
+.content-panel {
+    -fx-background-color: #000000; /* Black */
+    -fx-border-color: #FFD700; /* Yellow border */
+    -fx-border-width: 2px;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 40;
+    -fx-min-width: 600px;
+    -fx-min-height: 600px;
+}
+
+/* Fix for StackPane wrapper */
+.stack-pane {
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+}
+
+/* Text colors */
+.label {
+    -fx-text-fill: #FFFFFF; /* White text by default */
+}
+
+.title {
+    -fx-text-fill: #FFD700; /* Yellow for titles */
+}
