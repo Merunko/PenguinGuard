@@ -231,9 +231,10 @@ public class EntryForm {
         String email = emailField.getText().trim();
         String username = userField.getText().trim();
         String otherInfo = otherArea.getText().trim();
+        String password = passField.getText().trim();
 
         // Validate no field contains the delimiter
-        if (Stream.of(category, name, email, username, otherInfo)
+        if (Stream.of(category, name, email, username, otherInfo, password)
                 .anyMatch(s -> s.contains(DELIMITER))) {
             throw new IllegalArgumentException("Field values cannot contain '" + DELIMITER + "'");
         }
@@ -245,7 +246,9 @@ public class EntryForm {
                 Encryption.encrypt(name),
                 email.isEmpty() ? "" : Encryption.encrypt(email),
                 username.isEmpty() ? "" : Encryption.encrypt(username),
-                otherInfo.isEmpty() ? "" : Encryption.encrypt(otherInfo));
+                otherInfo.isEmpty() ? "" : Encryption.encrypt(otherInfo),
+                Encryption.encrypt(password)  // Include encrypted password here
+        );
 
         return entryString.getBytes(StandardCharsets.UTF_8);
     }
